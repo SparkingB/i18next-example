@@ -2,6 +2,8 @@
 
 使用 `i18next` 結合 React. 用法非常多種，請 checkout 到以下 branch 看程式碼：
 
+* [i18next-instances](https://github.com/xJkit/i18next-example/tree/i18next-instances)
+
 ## 基本觀念：
 
 在 App 初始化中 `index.js` 讀取 `i18n.js`:
