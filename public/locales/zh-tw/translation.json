@@ -1,0 +1,6 @@
+{
+  "title": "Create React App 結合 i18next 一起使用",
+  "subTitle": "請你 checkout 到其他的 branch 看看原始碼翻譯成果。",
+  "switcher": "語系切換開關：",
+  "link": "Interpoliation: 使用 {{f}} 快速插入字串，或是 {{i}} 嵌入 React 組件。"
+}

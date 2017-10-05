@@ -11,6 +11,8 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
     "i18next": "^9.0.1",
+    "i18next-browser-languagedetector": "^2.0.0",
+    "i18next-xhr-backend": "^1.4.3",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

@@ -2,19 +2,42 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+/**
+ * 取得 react-i18next context
+ */
+import { I18n, Trans, Interpolate } from 'react-i18next';
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          使用 <a href="https://github.com/i18next" target="_blank">i18next</a> 為網站做 Internalization.
-        </p>
-        <p>請 checkout 到各個 branch 細看不同的實作方式。</p>
-      </div>
+      <I18n
+        ns="translation"
+      >
+      {(t, { i18n }) => (
+        <div className="App">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="App-title">
+              {t('title')}
+            </h1>
+            <div className="btn-group">
+              <span>{t('switcher')}</span>
+              <button onClick={() => i18n.changeLanguage('en')}>EN</button>
+              <button onClick={() => i18n.changeLanguage('zh-tw')}>zh-TW</button>
+              <button onClick={() => i18n.changeLanguage('zh-cn')}>zh-CN</button>
+            </div>
+          </header>
+          <p className="App-intro">
+            <Interpolate
+              i18nKey="link"
+              f={<a href="https://www.i18next.com/formatting.html#">formatting</a>}
+              i={<a href="https://react.i18next.com/components/interpolate.html#">Interpolate</a>}
+            />
+          </p>
+          <p>{t('subTitle')}</p>
+        </div>
+      )}
+      </I18n>
     );
   }
 }

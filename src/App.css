@@ -7,11 +7,22 @@
   height: 80px;
 }
 
+
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 200px;
   padding: 20px;
   color: white;
+}
+
+.App-header .btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-header .btn-group button {
+  margin-right: 8px;
 }
 
 .App-title {
