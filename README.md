@@ -38,6 +38,7 @@ export default i18n;
 
 * `.use` 讀取插件，詳情請見下方插件系統連結。
 * `.init` 初始化函數： i18n.init(**options**, callback), 詳見下方設定說明
+* XHR 會讀取在 public 網域下的 json 檔案，是必須的
 
 ## References
 * [i18next](https://www.i18next.com/#) 官方文件
