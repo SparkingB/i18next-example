@@ -54,6 +54,7 @@ export default i18n;
   * Pros & Cons:
     * 被 webpack 打包，會增加 bundle.js 檔案大小
     * 除非你使用 webpack loader 或 plugin 將檔案分離
+    * 適合完全 Offline 環境下使用。
 
 ## References
 * [i18next](https://www.i18next.com/#) 官方文件
