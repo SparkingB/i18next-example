@@ -40,7 +40,48 @@ export default i18n;
 
 * `.use` 讀取插件，詳情請見下方插件系統連結。
 * `.init` 初始化函數： i18n.init(**options**, callback), 詳見下方設定說明
-* XHR 會讀取在 public 網域下的 json 檔案，是必須的
+* XHR 會讀取在 public 網域下的 json 檔案，另外發一個 http request, 是必須的
+  * 使用 i18next.init 中的 [resources](https://www.i18next.com/configuration-options.html) 可以直接讀取指定檔案, 或是使用 [addResourceBundle](https://www.i18next.com/api.html#resource-handling)
+
+## Name Space
+
+NS 可以在 .init 中宣告, 也可以在組件中指定。
+
+在 `i18n.js` 中 做全域設定，多個 name space 表示可以拆開多個檔案
+
+```js
+i18n.init({
+  ns: ['common', 'main'],
+  defaultNS: 'main',
+});
+
+```
+
+在組件中使用 ns:xxx 去指定 namespace, 例如：
+
+```jsx
+import { I18n } from 'react-i18next';
+//...
+render() {
+  return (
+    <I18n>
+      <h1>{t('common:your-key-in-common-json')}</h1>
+      <h2>{t('another-key-with-default-main')}</h2>
+    </I18n>
+  )
+}
+
+```
+沒指定表示使用 *defaultNS* 作為預設 Name space. 如果該區域都是用同樣的 ns 但是都不是預設，不需要每個都 `common:`, 只要在 `I18n` 組件中的 props 指定：
+
+```jsx
+  <I18n ns="common">
+    <h1>{t('your-key-in-common-json')}</h1>
+    <h2>{t('main:another-key-in-main')}</h2>
+  </I18n>
+```
+
+注意，原本的 main (預設 ns) 在指定 ns="common"情況下就必須手動 `main:` 指定了。
 
 ## References
 * [i18next](https://www.i18next.com/#) 官方文件

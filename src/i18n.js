@@ -16,6 +16,8 @@ i18n
   .init({
     fallbackLng: 'en', // 選擇預設語系
     debug: true,
+    ns: ['common', 'main'],
+    defaultNS: 'main',
     interpolation: {
       escapeValue: false, // 跳脫字元預防 XXS 攻擊，預設打開，然後在 React 中不需要
     },

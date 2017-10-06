@@ -1,6 +1,5 @@
 {
   "title": "Create React App 结合使用 i18next 非常牛！",
   "subTitle": "详细信息请见其他分支。",
-  "switcher": "语系切换开关：",
   "link": "Interpolation: 您可试试使用 {{f}} 迅速插入字符串，或是 {{i}} 插入组件，很牛的。"
 }
