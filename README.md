@@ -15,7 +15,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import { reactI18nextModule } from 'react-i18next';
 
 i18n
-  .use(XHR)
+  .use(XHR) // 可以使用 XHR 或 resources
   .use(LanguageDetector)
   .use(reactI18nextModule) // if not using I18nextProvider
   .init({
@@ -40,10 +40,24 @@ export default i18n;
 
 * `.use` 讀取插件，詳情請見下方插件系統連結。
 * `.init` 初始化函數： i18n.init(**options**, callback), 詳見下方設定說明
-* XHR 會讀取在 public 網域下的 json 檔案，是必須的
+
+## Load i18n resources
+
+讀取翻譯的方式參考最後 references, 有以下解：
+
+* `i18next-xhr-backend`
+  * 掛 plugin 上去, 設定好 Name Space, 完成。
+  * Pros & Cons:
+    * 增加 HTTP Requests
+* `i18next.init.resources`
+  * 直接讀取本地物件
+  * Pros & Cons:
+    * 被 webpack 打包，會增加 bundle.js 檔案大小
+    * 除非你使用 webpack loader 或 plugin 將檔案分離
 
 ## References
 * [i18next](https://www.i18next.com/#) 官方文件
 * [react-i18next](https://react.i18next.com/) 官方文件
 * [i18next plugins](https://www.i18next.com/plugins-and-utils.html#plugins): i18n 插件系統
 * [i18next options](https://www.i18next.com/configuration-options.html): configuration option 設定文件
+* [i18next load translations](https://www.i18next.com/add-or-load-translations.html)
