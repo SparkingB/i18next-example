@@ -21,8 +21,8 @@ class App extends Component {
             <div className="btn-group">
               <span>{t('common:switcher')}</span>
               <button onClick={() => i18n.changeLanguage('en')}>EN</button>
-              <button onClick={() => i18n.changeLanguage('zh-tw')}>zh-TW</button>
-              <button onClick={() => i18n.changeLanguage('zh-cn')}>zh-CN</button>
+              <button onClick={() => i18n.changeLanguage('zh_TW')}>zh_TW</button>
+              <button onClick={() => i18n.changeLanguage('zh_CN')}>zh_CN</button>
             </div>
           </header>
           <p className="App-intro">
